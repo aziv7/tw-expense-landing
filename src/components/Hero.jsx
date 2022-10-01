@@ -1,6 +1,6 @@
 import React from 'react';
 import { hero } from '../data';
-
+import { FiChevronDown } from 'react-icons/fi';
 const Hero = () => {
   const { title, subtitle, btnText, compText, image } = hero;
 
@@ -26,7 +26,10 @@ const Hero = () => {
               data-aos-delay='700'
               className='flex items-center max-w-sm lg:max-w-full mx-auto lg:mx-0 gap-x-2  lg:gap-x-6'>
               <button className='btn btn-md lg:btn-lg btn-accent flex justify-center items-center lg:gap-x-4'>
-                {btnText}{' '}
+                <span>{btnText}</span>{' '}
+                <span>
+                  <FiChevronDown />
+                </span>
               </button>
               <span className='text-light lg:lead lg:mb-0'>{compText} </span>
             </div>
