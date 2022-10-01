@@ -14,10 +14,11 @@ import {
 } from './components';
 
 import Aos from 'aos';
-
+import 'aos/dist/aos.css';
 import logo from './logo.svg';
 
 function App() {
+  Aos.init({ duration: 1800, offset: 100 });
   return (
     <div className=''>
       <Header />
@@ -34,6 +35,7 @@ function App() {
       <Testimonials />
       <Cta />
       <Footer />
+      <div className='h-[4000px]'></div>
     </div>
   );
 }
