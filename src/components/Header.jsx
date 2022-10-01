@@ -12,31 +12,35 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      window.screenY > 60 ? setActive(true) : setActive(false);
+      console.log(window.screenY);
+      window.scrollY > 65 ? setActive(true) : setActive(false);
     };
 
-    const event = window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      if (event) event.removeEventListener('scroll', handleScroll);
-    };
+    window.addEventListener('scroll', handleScroll);
   }, []);
   return (
     <header
       className={`  ${
         active ? 'lg:top-0 bg-white shadow-2xl' : 'lg:top-[60px]'
-      } py-6 lg:py-4 fixed w-full transition-all z-10`}>
+      } py-6 lg:py-4 fixed w-full transition-all duration-500 z-10`}>
       <div className='container mx-auto flex items-center justify-between'>
-        <a href=''>
+        <a href='' data-aos='fade-down' data-aos-delay='1000'>
           <img src={logo} alt='' />
         </a>
-        <div className='hidden lg:flex '>
+        <div
+          data-aos='fade-down'
+          data-aos-delay='1200'
+          className='hidden lg:flex '>
           <Nav />
         </div>
         <button className='btn btn-sm btn-outline hidden lg:flex'>
           {btnText}{' '}
         </button>
-        <button className='lg:hidden' onClick={() => setShow(!show)}>
+        <button
+          data-aos='fade-down'
+          data-aos-delay='1400'
+          className='lg:hidden'
+          onClick={() => setShow(!show)}>
           {show ? (
             <HiOutlineX className='text-3xl text-accent' />
           ) : (
